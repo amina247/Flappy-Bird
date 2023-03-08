@@ -15,13 +15,22 @@ hole.addEventListener('animationiteration', () => {
 });
 
 
+//make player jump
+/*function jump()
+{ if(Event === true) {
+	transform. position. y = old_y + 1;
+	}
+}
+InvokeRepeating("jump", 0, 0.5); */
+
+
 //Gravity stimulation
 setInterval(function(){
 	var playerTop = parseInt(window.getComputedStyle(player).getPropertyValue("top"));
 
 	//change top if we are not currently jumping or else ball would be moving up and down
 	if(jumping===0){
-		charachter.style.top = (charachterTop+3)+ "px"
+		player.style.top = (playerTop+3)+ "px"
 	}
 	var blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
 	var holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
@@ -40,8 +49,8 @@ function jump(){
 	var jumpInterval = setInterval(function(){
 		var playerTop = parseInt(window.getComputedStyle(player).getPropertyValue("top"));
 		//when bird goes to the very top, then don't keep adding to the top
-		if(charachterTop>6){
-		charachter.style.top = (charachterTop-5)+ "px"
+		if((playerTop>6)&&(counter<15)){
+		player.style.top = (playerTop-5)+ "px"
 		}
 		if(jumpCount>20){
 			clearInterval(jumpInterval);
