@@ -4,7 +4,7 @@ body{
     background-color: darkslategray;
 }
 
-.game{
+#game{
     width: 400px;
     height: 500px;
     border: 1px solid black;
@@ -16,9 +16,9 @@ body{
 #block{
 width: 50px;
 height: 500px;
-background-color:orange;
+background-color:rgb(82, 52, 52);
 position: relative;
-left: 400px;
+left: 10000px;
 animation: block 2s infinite linear;
 } 
 
@@ -30,18 +30,20 @@ animation: block 2s infinite linear;
 #hole{
     width: 50px;
     height: 150px;
-    background-color: aqua;
+    background-color:transparent;
     position: relative;
     left: 400px;
     top: -500px;
+    background-color: black;
     animation: block 2s infinite linear;
      
 }
 
 #player{
-    width: 30px;
-    height: 30px;
-    background-color: black;
+    width: 50px;
+    height: 50px;
+    /* background-color: black; */
     position: absolute;
     top: 100px;
+    background-image:url("pics/Subject.png");
 }

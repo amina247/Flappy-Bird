@@ -1,8 +1,19 @@
 var block = document.getElementById("block");
 var hole = document.getElementById("hole");
 var player = document.getElementById("player");
+var game = document.getElementById("game");
 var jumping = 0;
 var counter = 0;
+
+
+game.style.backgroundImage= "url('pics/background2.png')";
+// hole.style.backgroundImage= "url('pics/fog2.png')";
+block.style.backgroundImage= "url('pics/blocks2.png')";
+
+
+// const img = document.createElement("img");
+// img.src="pics/Subject.png";
+// player.appendChild(img);
 
 
 
@@ -38,7 +49,7 @@ setInterval(function(){
 	var pTop = -(500 - playerTop);
 
 	if((playerTop>480)||((blockLeft<20)&&(blockLeft>-50)&&((pTop<holeTop)||(pTop>holeTop+120)))){
-		alert("Game over. Score: "+counter);
+		alert("Game over!! you Scored: "+counter);
 		player.style.top = 100 + "px";
 		counter = 0;
 	}
@@ -47,12 +58,12 @@ setInterval(function(){
 
 //make the player jumps
 function jump(){
-	jumping = 1;
+	jumping = 0;
 	let jumpCount = 0;
 	var jumpInterval = setInterval(function(){
 		var playerTop = parseInt(window.getComputedStyle(player).getPropertyValue("top"));
 		//when bird goes to the very top, then don't keep adding to the top
-		if((playerTop>6)&&(counter<15)){
+		if((playerTop>6)&&(counter<1500)){
 		player.style.top = (playerTop-5)+ "px"
 		}
 		if(jumpCount>20){
